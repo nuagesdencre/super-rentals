@@ -9,6 +9,11 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route('about');
   this.route('contact');
+  this.route('rentals');
 });
 
-export default Router;
+export default Router.extend({
+  beforeModel() {
+    this.replaceWith('rentals');
+  }
+});
