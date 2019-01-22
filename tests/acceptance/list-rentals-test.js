@@ -10,4 +10,9 @@ module('Acceptance | list rentals', function(hooks) {
 
     assert.equal(currentURL(), '/');
   });
+
+  test('should list available rentals.', async function(assert) {
+    await visit('/');
+    assert.equal(this.element.querySelectorAll('.listing').length, 3, 'should display 3 listings');
+  });
 });
